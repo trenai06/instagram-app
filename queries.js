@@ -19,6 +19,7 @@ async function createPost(req, res) {
         image: req.body.image, 
         caption: req.body.caption, 
         likes: req.body.likes, 
+        comments: req.body.comments
         //timestamp??
       
     })
@@ -42,32 +43,42 @@ async function deletePost(req, res) {
     res.status(200).send(`User ID ${id} was deleted!`)
 }
 
-async function likePost(req, res) {
+// async function likePost(req, res) {
 
-}
+// }
 
 async function getComments(req, res) { 
     const id = req.params.id
+    comment = req.body.comments
   const data = await Model.findById(id)
+  res.status(200).send(comment)
 
 }
 
 async function createComment(req, res) { 
-    const id = req.params.id
-    const commentSchema = new Model({
-        username: req.body.username,
-        content: req.body.content,
-        // timestamp?  
-    })
-    const saveCommentSchema = await commentSchema.save()
-const comment = []
-comment.push(commentSchema)
-    res.status(200).json(comment)
+
+
+})
+
+
+    // const id = req.params.id
+
+    // const comment = req.body.comments
+    //     commentSchema = new Model({ 
+    //         username: comment.username,
+    //         content: comment.content, 
+    //     })
+
+
+//     const saveCommentSchema = await commentSchema.save()
+// const comment = []
+// comment.push(saveCommentSchemacommentSchema)
+//     res.status(200).json(comment)
 }
 
-async function deleteComment(req, res) {
+// async function deleteComment(req, res) {
 
-}
+// }
 
 
 module.exports = {
@@ -76,4 +87,6 @@ module.exports = {
  createPost, 
  updatePost, 
  deletePost, 
+ getComments, 
+ createComment, 
 }

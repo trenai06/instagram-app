@@ -10,10 +10,10 @@ const commentSchema = new mongoose.Schema({
         type: String
     }, 
 
-    timestamp:{
-        required: true, 
-        type: Number
-    }
+    // timestamp:{
+    //     required: true, 
+    //     type: Number
+    // }
 });
 
 const postSchema = new mongoose.Schema({
@@ -47,10 +47,10 @@ const postSchema = new mongoose.Schema({
         type:[commentSchema]
     },
     
-    timestamp:{
-        required: true, 
-        type: Number
-    }
+    // timestamp:{
+    //     required: true, 
+    //     type: Number
+    // }
 
 })
 

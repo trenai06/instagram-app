@@ -40,9 +40,9 @@ app.delete("/deletepost/:id", queries.deletePost)
 
 // app.post("/likes/:id", queries.likePost)
 
-// app.get("/post/getcomments/:id", queries.getComments)
+app.get("/post/getcomments/:id", queries.getComments)
 
-// app.post("/createcomment/:id", queries.createComment)
+app.post("/createcomment/:id", queries.createComment)
 
 // app.delete("/deletecomment/:id", queries.deleteComment)
 
