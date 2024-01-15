@@ -1,27 +1,28 @@
 const mongoose = require('mongoose')
+const sub = require("./subschema.js")
+// const commentSchema = new mongoose.Schema({
+//     username: {
+//         required: true, 
+//         type: String
+//     }, 
+    
+//     content: {
+//         required: true, 
+//         type: String
+//     }, 
 
-const commentSchema = new mongoose.Schema({
-    username: {
-        required: true, 
-        type: String
-    }, 
-    content: {
-        required: true, 
-        type: String
-    }, 
-
-    // timestamp:{
-    //     required: true, 
-    //     type: Number
-    // }
-});
+//     // timestamp:{
+//     //     required: true, 
+//     //     type: Number
+//     // }
+// });
 
 const postSchema = new mongoose.Schema({
-    // userid:{
-    //     required: true, 
-    //     type: String
-    // }, 
-
+    userid: {
+        required:true, 
+        type:String
+    }, 
+   
     username:{
         required: true, 
         type: String
@@ -44,13 +45,13 @@ const postSchema = new mongoose.Schema({
     
     comments:{
         required: false, 
-        type:[commentSchema]
+        type:[sub.schema]
     },
     
-    // timestamp:{
-    //     required: true, 
-    //     type: Number
-    // }
+    timestamp:{
+        required: true, 
+        type: Number
+    }
 
 })
 
